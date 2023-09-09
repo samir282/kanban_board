@@ -34,7 +34,6 @@ def task(swim_id : UUID, title : str, description : str, db : Session):
     except Exception as e:
         raise HTTPException(status_code= status.HTTP_500_INTERNAL_SERVER_ERROR, detail= f"an error occured{e}")
     
-    
 def move_task(task_id : UUID, to_swim_id : UUID, db : Session):
     try:
         db_task = db.query(Task).filter(Task.id == task_id).first()
