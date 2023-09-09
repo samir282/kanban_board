@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+import motor.motor_asyncio as motor
 
 
 db_url = "mysql://root:root@localhost:3306/kanban"
