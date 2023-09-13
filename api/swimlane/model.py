@@ -8,5 +8,5 @@ swimlane_base = base
 class SwimLane(swimlane_base):
     __tablename__ = "swimlane"
     swim_id = Column(Uuid, primary_key= True)
-    swim_name = Column(String(30))
+    swim_name = Column(String(30), unique= True)
     task = relationship('Task', back_populates= 'swimlane')

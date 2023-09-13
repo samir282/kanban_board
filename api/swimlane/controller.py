@@ -14,6 +14,6 @@ def create_swim(request : Swim_Schema, db : Session = Depends(get_db)):
     return new_swim(request.swim_name, db)
 
 @swim_router.delete("/delete_awim/{swim_id}", status_code= status.HTTP_200_OK)
-def delete_swim(swim_id : UUID, db : Session = Depends(get_db)):
-    return remove_swim(swim_id, db)
+async def delete_swim(swim_id : UUID, db : Session = Depends(get_db)):
+    return await remove_swim(swim_id, db)
 
